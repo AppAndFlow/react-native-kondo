@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/AppAndFlow/react-native-kondo#readme",
   "devDependencies": {
+    "@types/react": "^16.8.8",
+    "@types/react-native": "^0.57.40",
     "eslint": "^5.15.1",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-react": "^7.12.4",
