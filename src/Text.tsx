@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Text as ReactNativeText } from 'react-native';
+import { Text as ReactNativeText, TextProps } from 'react-native';
 
-const Text = props => <ReactNativeText>{props.children}</ReactNativeText>;
+const Text = (props: TextProps) => <ReactNativeText {...props} />;
 
 export default Text;
