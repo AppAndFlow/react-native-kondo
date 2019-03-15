@@ -3,4 +3,4 @@ import { Text as ReactNativeText, TextProps } from 'react-native';
 
 const Text = (props: TextProps) => <ReactNativeText {...props} />;
 
-export default Text;
+export { Text };

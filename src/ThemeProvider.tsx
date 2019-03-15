@@ -19,4 +19,4 @@ ThemeProvider.defaultProps = {
   theme,
 };
 
-export default ThemeProvider;
+export { ThemeProvider };
