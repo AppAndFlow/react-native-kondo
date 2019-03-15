@@ -33,5 +33,9 @@
     "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.16.4",
     "typescript": "^3.3.3333"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-native": "^0.59.0"
   }
 }
