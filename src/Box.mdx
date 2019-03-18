@@ -1,0 +1,30 @@
+---
+name: Box
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz'
+
+import { Box } from './Box'
+
+# Box
+
+Box renders a View
+
+## Propes
+
+<PropsTable of={Box} />
+
+## Basic usage
+
+<Playground>
+  <Box bg="salmon" height={100} width={100} />
+</Playground>
+
+## With different sizes and background colors
+
+<Playground>
+  <Box bg="tomato" height={24} width={24} />
+  <Box bg="#7fffd4" height={48} width={48} />
+  <Box bg="rgb(30, 144, 255)" height={128} width={128} />
+</Playground>

@@ -1,0 +1,31 @@
+---
+name: Text
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz'
+
+import { Text } from './Text'
+
+# Text
+
+Text renders a Text
+
+## Props
+
+<PropsTable of={Text} />
+
+## Basic usage
+
+<Playground>
+  <Text>Hello world</Text>
+</Playground>
+
+## With different sizes
+
+<Playground>
+  <Text fontSize={14}>Normal text</Text>
+  <Text fontSize={18}>Medium text</Text>
+  <Text fontSize={24}>Large text</Text>
+  <Text fontSize={36}>Huge text</Text>
+</Playground>
