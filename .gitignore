@@ -1,4 +1,4 @@
-node_modules
-dist
 .docz
 .DS_Store
+dist
+node_modules
