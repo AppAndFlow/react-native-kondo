@@ -13,7 +13,7 @@ interface Shadow {
 
 export interface Theme {
   borders: Border[];
-  colors: object;
+  colors: { [key: string]: string };
   fonts: {};
   fontSizes: number[];
   letterSpacings: number[];
