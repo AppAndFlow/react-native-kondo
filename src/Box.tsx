@@ -48,11 +48,11 @@ function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
   return StyleSheet.flatten([style, { flex, height, width }]);
 }
 
-const Box = (props: BoxProps & ViewProps) => (
+const Box = ({ style, ...props }: BoxProps & ViewProps) => (
   <ThemeConsumer>
-    {(value: any) => (
+    {(value: { theme: Theme }) => (
       <View
-        style={{ ...getStyleSheetFromBoxProps(props, value.theme) }}
+        style={[getStyleSheetFromBoxProps(props, value.theme), style]}
         {...props}
       />
     )}

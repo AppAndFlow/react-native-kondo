@@ -36,8 +36,8 @@ const theme: Theme = {
   colors,
   fonts: {},
   fontSizes: [12, 14, 16, 20, 24, 32],
-  letterSpacings: [1],
-  lineHeights: [1, 1.5, 2],
+  letterSpacings: [0, 1, 2],
+  lineHeights: [12, 16, 32],
   opacity,
   shadows: [
     {
@@ -50,14 +50,14 @@ const theme: Theme = {
     {
       elevation: 3,
       shadowColor: colors.black,
-      shadowOffset: { height: 3, width: 1 },
+      shadowOffset: { height: 3, width: 3 },
       shadowOpacity: opacity[2],
       shadowRadius: 3,
     },
     {
       elevation: 5,
       shadowColor: colors.black,
-      shadowOffset: { height: 5, width: 1 },
+      shadowOffset: { height: 5, width: 5 },
       shadowOpacity: opacity[2],
       shadowRadius: 5,
     },
