@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { StyleSheet, View, ViewProps, ViewStyle } from 'react-native';
 
-interface Props {
+import { Theme } from './theme';
+import { ThemeConsumer } from './ThemeProvider';
+
+export interface BoxProps {
   bg?: string;
   flex?: number;
   height: number;
@@ -22,11 +25,11 @@ interface Props {
   width?: number;
 }
 
-function getStyleSheetFromBoxProps(props: Props) {
+function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
   const { flex, height, width } = props;
   const style: ViewStyle = {};
 
-  if (props.bg) style.backgroundColor = props.bg;
+  if (props.bg) style.backgroundColor = theme.colors.bg || props.bg;
   if (props.m) style.margin = props.m;
   if (props.mb) style.marginBottom = props.mb;
   if (props.ml) style.marginLeft = props.ml;
@@ -45,8 +48,18 @@ function getStyleSheetFromBoxProps(props: Props) {
   return StyleSheet.flatten([style, { flex, height, width }]);
 }
 
-const Box = (props: Props & ViewProps) => (
-  <View style={{ ...getStyleSheetFromBoxProps(props) }} {...props} />
+const Box = (props: BoxProps & ViewProps) => (
+  <ThemeConsumer>
+    {(value: any) => (
+      <View
+        style={{ ...getStyleSheetFromBoxProps(props, value.theme) }}
+        {...props}
+      />
+    )}
+  </ThemeConsumer>
 );
 
 export { Box };
+
+// TODO: move
+export const BoxForDoc = (props: BoxProps) => <Box {...props} />;

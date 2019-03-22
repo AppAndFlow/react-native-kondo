@@ -1,3 +1,3 @@
-export * from './Box'
-export * from './Text'
-export * from './ThemeProvider'
+export { Box, BoxProps } from './Box';
+export { Text, TextProps } from './Text';
+export * from './ThemeProvider';

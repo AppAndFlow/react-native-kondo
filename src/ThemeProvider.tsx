@@ -19,4 +19,6 @@ ThemeProvider.defaultProps = {
   theme,
 };
 
-export { ThemeProvider };
+const ThemeConsumer = ThemeContext.Consumer;
+
+export { ThemeProvider, ThemeConsumer };
