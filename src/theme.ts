@@ -1,9 +1,9 @@
-export interface Border {
+interface Border {
   borderWidth: number;
   borderColor: string;
 }
 
-export interface Shadow {
+interface Shadow {
   elevation: number;
   shadowColor: keyof typeof colors | string;
   shadowOffset: { height: number; width: number };
@@ -26,9 +26,7 @@ export interface Theme {
 const colors = {
   black: '#171717',
 };
-
 const opacity = [1, 0.6, 0.3];
-
 const theme: Theme = {
   borders: [
     { borderColor: colors.black, borderWidth: 1 },
