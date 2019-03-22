@@ -5,7 +5,7 @@ menu: Components
 
 import { Playground, PropsTable } from 'docz'
 
-import { Text } from '../src/Text'
+import { Text, TextForDoc } from '../src/Text'
 
 # Text
 
@@ -13,18 +13,18 @@ Text renders a Text
 
 ## Props
 
-<PropsTable of={Text} />
+<PropsTable of={TextForDoc} />
 
 ## Basic usage
 
 <Playground>
-  <Text>Hello world</Text>
+  <Text fontSize={3} color="salmon">Basic text</Text>
 </Playground>
 
-## With different sizes
+## With different sizes and letter spacings
 
 <Playground>
-  <Text fontSize={14}>Normal text</Text>
-  <Text fontSize={16}>Medium text</Text>
-  <Text fontSize={32}>Large text</Text>
+  <Text fontSize={1}>Normal text</Text>
+  <Text fontSize={5} letterSpacing={1}>Large text</Text>
+  <Text fontSize={36} letterSpacing={2}>Giant text</Text>
 </Playground>
