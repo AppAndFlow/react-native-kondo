@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import theme, { Theme } from './theme';
 
-const ThemeContext = React.createContext({});
+const ThemeContext = React.createContext({ theme });
 
 interface Props {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const ThemeProvider = (props: Props) => (
-  <ThemeContext.Provider value={props.theme}>
+  <ThemeContext.Provider value={{ theme: props.theme }}>
     {props.children}
   </ThemeContext.Provider>
 );
