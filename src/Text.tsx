@@ -21,14 +21,22 @@ function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
   const style: TextStyle = {};
   const { textAlign } = props;
 
-  if (props.color) style.color = theme.colors[props.color] || props.color;
-  if (props.fontSize)
+  if (props.color != undefined) {
+    style.color = theme.colors[props.color] || props.color;
+  }
+
+  if (props.fontSize != undefined) {
     style.fontSize = theme.fontSizes[props.fontSize] || props.fontSize;
-  if (props.letterSpacing)
+  }
+
+  if (props.letterSpacing != undefined) {
     style.letterSpacing =
       theme.letterSpacings[props.letterSpacing] || props.letterSpacing;
-  if (props.lineHeight)
+  }
+
+  if (props.lineHeight != undefined) {
     style.lineHeight = theme.lineHeights[props.lineHeight] || props.lineHeight;
+  }
 
   return StyleSheet.flatten([style, { textAlign }]);
 }

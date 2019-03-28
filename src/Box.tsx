@@ -25,28 +25,78 @@ export interface BoxProps {
   pt?: number;
   px?: number;
   py?: number;
+  shadow?: number;
   width?: number;
 }
 
 function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
   const { alignItems, alignSelf, flex, height, justifyContent, width } = props;
-  const style: ViewStyle = {};
+  let style: ViewStyle = {};
 
-  if (props.bg) style.backgroundColor = theme.colors[props.bg] || props.bg;
-  if (props.m) style.margin = theme.space[props.m] || props.m;
-  if (props.mb) style.marginBottom = theme.space[props.mb] || props.mb;
-  if (props.ml) style.marginLeft = theme.space[props.ml] || props.ml;
-  if (props.mr) style.marginRight = theme.space[props.mr] || props.mr;
-  if (props.mt) style.marginTop = theme.space[props.mt] || props.mt;
-  if (props.mx) style.marginHorizontal = theme.space[props.mx] || props.mx;
-  if (props.my) style.marginVertical = theme.space[props.my] || props.my;
-  if (props.p) style.padding = theme.space[props.p] || props.p;
-  if (props.pb) style.paddingBottom = theme.space[props.pb] || props.pb;
-  if (props.pl) style.paddingLeft = theme.space[props.pl] || props.pl;
-  if (props.pr) style.paddingRight = theme.space[props.pr] || props.pr;
-  if (props.pt) style.paddingTop = theme.space[props.pt] || props.pt;
-  if (props.px) style.paddingHorizontal = theme.space[props.px] || props.px;
-  if (props.py) style.paddingVertical = theme.space[props.py] || props.py;
+  if (props.bg != undefined) {
+    style.backgroundColor = theme.colors[props.bg] || props.bg;
+  }
+
+  if (props.m != undefined) {
+    style.margin = theme.space[props.m] || props.m;
+  }
+
+  if (props.mb != undefined) {
+    style.marginBottom = theme.space[props.mb] || props.mb;
+  }
+
+  if (props.ml != undefined) {
+    style.marginLeft = theme.space[props.ml] || props.ml;
+  }
+
+  if (props.mr != undefined) {
+    style.marginRight = theme.space[props.mr] || props.mr;
+  }
+
+  if (props.mt != undefined) {
+    style.marginTop = theme.space[props.mt] || props.mt;
+  }
+
+  if (props.mx != undefined) {
+    style.marginHorizontal = theme.space[props.mx] || props.mx;
+  }
+
+  if (props.my != undefined) {
+    style.marginVertical = theme.space[props.my] || props.my;
+  }
+
+  if (props.p != undefined) {
+    style.padding = theme.space[props.p] || props.p;
+  }
+
+  if (props.pb != undefined) {
+    style.paddingBottom = theme.space[props.pb] || props.pb;
+  }
+
+  if (props.pl != undefined) {
+    style.paddingLeft = theme.space[props.pl] || props.pl;
+  }
+
+  if (props.pr != undefined) {
+    style.paddingRight = theme.space[props.pr] || props.pr;
+  }
+
+  if (props.pt != undefined) {
+    style.paddingTop = theme.space[props.pt] || props.pt;
+  }
+
+  if (props.px != undefined) {
+    style.paddingHorizontal = theme.space[props.px] || props.px;
+  }
+
+  if (props.py != undefined) {
+    style.paddingVertical = theme.space[props.py] || props.py;
+  }
+
+  if (props.shadow != undefined) {
+    // @ts-ignore
+    style = { ...style, ...(theme.shadows[props.shadow] || props.shadow) };
+  }
 
   return StyleSheet.flatten([
     style,

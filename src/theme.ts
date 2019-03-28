@@ -3,7 +3,7 @@ interface Border {
   borderColor: string;
 }
 
-interface Shadow {
+export interface Shadow {
   elevation: number;
   shadowColor: keyof typeof colors | string;
   shadowOffset: { height: number; width: number };
@@ -45,21 +45,21 @@ const theme: Theme = {
       shadowColor: colors.black,
       shadowOffset: { height: 1, width: 1 },
       shadowOpacity: opacity[2],
-      shadowRadius: 1,
+      shadowRadius: 3,
     },
     {
       elevation: 3,
       shadowColor: colors.black,
-      shadowOffset: { height: 3, width: 3 },
+      shadowOffset: { height: 2, width: 2 },
       shadowOpacity: opacity[2],
       shadowRadius: 3,
     },
     {
       elevation: 5,
       shadowColor: colors.black,
-      shadowOffset: { height: 5, width: 5 },
+      shadowOffset: { height: 3, width: 3 },
       shadowOpacity: opacity[2],
-      shadowRadius: 5,
+      shadowRadius: 3,
     },
   ],
   space: [0, 4, 8, 16, 32, 64],
