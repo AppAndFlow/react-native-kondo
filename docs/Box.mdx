@@ -5,7 +5,8 @@ menu: Components
 
 import { Playground, PropsTable } from 'docz'
 
-import { Box, BoxForDoc } from '../src/Box'
+import { Box } from '../src/Box';
+import { BoxForDoc } from '.';
 
 # Box
 
@@ -18,7 +19,9 @@ Box renders a View
 ## Basic usage
 
 <Playground>
-  <Box bg="salmon" height={100} width={100} />
+  <Box justifyContent="center" alignItems="center" height={200}>
+    <Box bg="salmon" height={128} width={128} />
+  </Box>
 </Playground>
 
 ## With different sizes and background colors

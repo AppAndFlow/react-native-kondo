@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+  StyleSheet,
   Text as ReactNativeText,
   TextProps as ReactNativeTextProps,
   TextStyle,
@@ -13,10 +14,12 @@ export interface TextProps {
   fontSize?: number;
   letterSpacing?: number;
   lineHeight?: number;
+  textAlign?: TextStyle['textAlign'];
 }
 
 function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
   const style: TextStyle = {};
+  const { textAlign } = props;
 
   if (props.color) style.color = theme.colors[props.color] || props.color;
   if (props.fontSize)
@@ -27,7 +30,7 @@ function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
   if (props.lineHeight)
     style.lineHeight = theme.lineHeights[props.lineHeight] || props.lineHeight;
 
-  return style;
+  return StyleSheet.flatten([style, { textAlign }]);
 }
 
 const Text = ({ style, ...props }: TextProps & ReactNativeTextProps) => (
@@ -42,6 +45,3 @@ const Text = ({ style, ...props }: TextProps & ReactNativeTextProps) => (
 );
 
 export { Text };
-
-// TODO: move
-export const TextForDoc = (props: TextProps) => <Text {...props} />;

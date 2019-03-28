@@ -5,9 +5,12 @@ import { Theme } from './theme';
 import { ThemeConsumer } from './ThemeProvider';
 
 export interface BoxProps {
+  alignItems?: ViewStyle['alignItems'];
+  alignSelf?: ViewStyle['alignSelf'];
   bg?: string;
   flex?: number;
-  height: number;
+  height?: number;
+  justifyContent?: ViewStyle['justifyContent'];
   m?: number;
   mb?: number;
   ml?: number;
@@ -26,7 +29,7 @@ export interface BoxProps {
 }
 
 function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
-  const { flex, height, width } = props;
+  const { alignItems, alignSelf, flex, height, justifyContent, width } = props;
   const style: ViewStyle = {};
 
   if (props.bg) style.backgroundColor = theme.colors[props.bg] || props.bg;
@@ -45,7 +48,10 @@ function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
   if (props.px) style.paddingHorizontal = theme.space[props.px] || props.px;
   if (props.py) style.paddingVertical = theme.space[props.py] || props.py;
 
-  return StyleSheet.flatten([style, { flex, height, width }]);
+  return StyleSheet.flatten([
+    style,
+    { alignItems, alignSelf, flex, height, justifyContent, width },
+  ]);
 }
 
 const Box = ({ style, ...props }: BoxProps & ViewProps) => (
@@ -60,6 +66,3 @@ const Box = ({ style, ...props }: BoxProps & ViewProps) => (
 );
 
 export { Box };
-
-// TODO: move
-export const BoxForDoc = (props: BoxProps) => <Box {...props} />;
