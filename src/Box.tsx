@@ -9,6 +9,8 @@ export interface BoxProps {
   alignSelf?: ViewStyle['alignSelf'];
   bg?: string;
   flex?: number;
+  flexDirection: ViewStyle['flexDirection'];
+  flexWrap: ViewStyle['flexWrap'];
   height?: number;
   justifyContent?: ViewStyle['justifyContent'];
   m?: number;
@@ -30,7 +32,15 @@ export interface BoxProps {
 }
 
 function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
-  const { alignItems, alignSelf, flex, height, justifyContent, width } = props;
+  const {
+    alignItems,
+    alignSelf,
+    flex,
+    flexDirection,
+    height,
+    justifyContent,
+    width,
+  } = props;
   let style: ViewStyle = {};
 
   if (props.bg != undefined) {
@@ -100,7 +110,15 @@ function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
 
   return StyleSheet.flatten([
     style,
-    { alignItems, alignSelf, flex, height, justifyContent, width },
+    {
+      alignItems,
+      alignSelf,
+      flex,
+      flexDirection,
+      height,
+      justifyContent,
+      width,
+    },
   ]);
 }
 

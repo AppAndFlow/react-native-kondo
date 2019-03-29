@@ -11,6 +11,7 @@ import { ThemeConsumer } from './ThemeProvider';
 
 export interface TextProps {
   color?: string;
+  fontFamily?: TextStyle['fontFamily'];
   fontSize?: number;
   letterSpacing?: number;
   lineHeight?: number;
@@ -23,6 +24,10 @@ function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
 
   if (props.color != undefined) {
     style.color = theme.colors[props.color] || props.color;
+  }
+
+  if (props.fontFamily != undefined) {
+    style.fontFamily = theme.fonts[props.fontFamily] || props.fontFamily;
   }
 
   if (props.fontSize != undefined) {
