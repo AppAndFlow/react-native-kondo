@@ -1,3 +1,5 @@
+// TODO: add border prop?
+
 import * as React from 'react';
 import { StyleSheet, View, ViewProps, ViewStyle } from 'react-native';
 
@@ -9,8 +11,8 @@ export interface BoxProps {
   alignSelf?: ViewStyle['alignSelf'];
   bg?: string;
   flex?: number;
-  flexDirection: ViewStyle['flexDirection'];
-  flexWrap: ViewStyle['flexWrap'];
+  flexDirection?: ViewStyle['flexDirection'];
+  flexWrap?: ViewStyle['flexWrap'];
   height?: number;
   justifyContent?: ViewStyle['justifyContent'];
   m?: number;
