@@ -1,14 +1,14 @@
-interface Border {
-  borderWidth: number;
-  borderColor: string;
+export interface Border {
+  borderWidth?: number;
+  borderColor?: string;
 }
 
 export interface Shadow {
-  elevation: number;
-  shadowColor: keyof typeof colors | string;
-  shadowOffset: { height: number; width: number };
-  shadowOpacity: keyof typeof opacity;
-  shadowRadius: number;
+  elevation?: number;
+  shadowColor?: keyof typeof colors | string;
+  shadowOffset?: { height: number; width: number };
+  shadowOpacity?: typeof opacity[0] | number;
+  shadowRadius?: number;
 }
 
 export interface Theme {

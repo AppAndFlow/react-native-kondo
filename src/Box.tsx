@@ -1,15 +1,14 @@
-// TODO: add border prop?
-
 import * as React from 'react';
 import { StyleSheet, View, ViewProps, ViewStyle } from 'react-native';
 
-import { Theme } from './theme';
+import { Theme, Shadow, Border } from './theme';
 import { ThemeConsumer } from './ThemeProvider';
 
 export interface BoxProps {
   alignItems?: ViewStyle['alignItems'];
   alignSelf?: ViewStyle['alignSelf'];
   bg?: string;
+  border?: number | Border;
   flex?: number;
   flexDirection?: ViewStyle['flexDirection'];
   flexWrap?: ViewStyle['flexWrap'];
@@ -29,7 +28,7 @@ export interface BoxProps {
   pt?: number;
   px?: number;
   py?: number;
-  shadow?: number;
+  shadow?: number | Shadow;
   width?: number;
 }
 
@@ -47,6 +46,15 @@ function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
 
   if (props.bg != undefined) {
     style.backgroundColor = theme.colors[props.bg] || props.bg;
+  }
+
+  if (props.border != undefined) {
+    style = {
+      ...style,
+      ...(typeof props.border === 'number'
+        ? theme.borders[props.border]
+        : props.border),
+    };
   }
 
   if (props.m != undefined) {
@@ -106,8 +114,12 @@ function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
   }
 
   if (props.shadow != undefined) {
-    // @ts-ignore
-    style = { ...style, ...(theme.shadows[props.shadow] || props.shadow) };
+    style = {
+      ...style,
+      ...(typeof props.shadow === 'number'
+        ? theme.shadows[props.shadow]
+        : props.shadow),
+    };
   }
 
   return StyleSheet.flatten([
