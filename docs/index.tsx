@@ -11,5 +11,6 @@ import {
 export const BoxForDoc = (props: BoxProps) => <Box {...props} />;
 export const TextForDoc = (props: TextProps) => <Text {...props} />;
 export const TouchableForDoc = (props: TouchableProps) => (
+  // @ts-ignore
   <Touchable {...props} />
 );
