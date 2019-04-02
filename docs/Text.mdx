@@ -5,6 +5,7 @@ menu: Components
 
 import { Playground, PropsTable } from 'docz'
 
+import { Box } from '../src/Box';
 import { Text } from '../src/Text';
 import { TextForDoc } from '.';
 
@@ -21,9 +22,11 @@ Text renders a Text
 ## With different sizes and letter spacings
 
 <Playground>
-  <Text fontSize={1}>Normal text</Text>
-  <Text fontSize={4} letterSpacing={1}>Large text</Text>
-  <Text fontSize={36} letterSpacing={2}>Giant text</Text>
+  <Box>
+    <Text fontSize={1}>Normal text</Text>
+    <Text fontSize={4} letterSpacing={1}>Large text</Text>
+    <Text fontSize={36} letterSpacing={2}>Giant text</Text>
+  </Box>
 </Playground>
 
 ## Props

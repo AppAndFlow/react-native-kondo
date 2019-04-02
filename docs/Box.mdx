@@ -6,6 +6,7 @@ menu: Components
 import { Playground, PropsTable } from 'docz'
 
 import { Box } from '../src/Box';
+import { Text } from '../src/Text';
 import { BoxForDoc } from '.';
 
 # Box
@@ -23,11 +24,17 @@ Box renders a View
 ## With different sizes, spacing and background colors
 
 <Playground>
-  <Box bg="tomato" height={24} width={24} />
-  <Box bg="#7fffd4" height={48} width={48} />
-  <Box bg="rgb(30, 144, 255)" height={128} width={128} />
-  <Box bg="plum" height={48} width={48} m={2} />
-  <Box bg="turquoise" height={48} width={48} m={30} />
+  <Box bg="honeydew" p={4}>
+    <Box bg="tomato" p={2} height={64}>
+      <Text>One</Text>
+    </Box>
+    <Box bg="#7fffd4" alignItems="center" p={2}>
+      <Text>Two</Text>
+    </Box>
+    <Box bg="rgb(30, 144, 255)" alignItems="flex-end" p={2}>
+      <Text>Three</Text>
+    </Box>
+  </Box>
 </Playground>
 
 ## Props
