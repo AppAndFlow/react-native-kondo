@@ -1,0 +1,13 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "dependencies": {
+    "expo": "^32.0.0",
+    "react-native-kondo": "file:..",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react": "16.5.0"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "^5.0.0"
+  },
+  "private": true
+}
