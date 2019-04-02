@@ -15,7 +15,6 @@ enum Feedback {
   Opacity = 'opacity',
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface TouchableProps extends BoxProps {
   feedback: Feedback;
 }

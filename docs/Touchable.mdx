@@ -4,6 +4,7 @@ menu: Components
 ---
 
 import { Playground, PropsTable } from 'docz'
+import { View } from 'react-native'
 
 import { Touchable } from '../src/Touchable';
 import { Text } from '../src/Text';
@@ -12,11 +13,7 @@ import { TouchableForDoc } from '.';
 
 # Touchable
 
-Touchable renders a TouchableOpacity
-
-## Props
-
-<PropsTable of={TouchableForDoc} />
+Touchable renders a TouchableOpacity or a TouchableHighlight
 
 ## Basic usage
 
@@ -24,12 +21,14 @@ Touchable renders a TouchableOpacity
   <Touchable
     bg="cornflowerblue"
     p={3}
-    width={200}
+    m={2}
     justifyContent="center"
     alignItems="center"
   >
-    <Text color="white">Basic Touchable</Text>
+    <Text color="white">Touchable</Text>
   </Touchable>
 </Playground>
 
-## With different ...
+## Props
+
+<PropsTable of={TouchableForDoc} />
