@@ -1,131 +1,54 @@
 import * as React from 'react';
 import {
-  TouchableNativeFeedback,
+  TouchableHighlight,
+  TouchableHighlightProps,
   TouchableOpacity,
   TouchableOpacityProps,
-  ViewStyle,
 } from 'react-native';
 
-import { Box, BoxProps } from './Box';
+import { BoxProps, getStyleSheetFromBoxProps } from './Box';
 import { Theme } from './theme';
 import { ThemeConsumer } from './ThemeProvider';
 
-export interface TouchableProps extends BoxProps {
-  children: React.ReactNode;
+enum Feedback {
+  Highlight = 'highlight',
+  Opacity = 'opacity',
 }
 
-function getStyleSheetFromTouchableProps(props: BoxProps, theme: Theme) {
-  const style: ViewStyle = {};
-
-  if (props.m != undefined) {
-    style.margin = theme.space[props.m] || props.m;
-  }
-
-  if (props.mb != undefined) {
-    style.marginBottom = theme.space[props.mb] || props.mb;
-  }
-
-  if (props.ml != undefined) {
-    style.marginLeft = theme.space[props.ml] || props.ml;
-  }
-
-  if (props.mr != undefined) {
-    style.marginRight = theme.space[props.mr] || props.mr;
-  }
-
-  if (props.mt != undefined) {
-    style.marginTop = theme.space[props.mt] || props.mt;
-  }
-
-  if (props.mx != undefined) {
-    style.marginHorizontal = theme.space[props.mx] || props.mx;
-  }
-
-  if (props.my != undefined) {
-    style.marginVertical = theme.space[props.my] || props.my;
-  }
-
-  return style;
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface TouchableProps extends BoxProps {
+  feedback: Feedback;
 }
 
 const Touchable = ({
-  children,
+  feedback,
   style,
   ...props
-}: BoxProps &
-  TouchableProps &
-  TouchableOpacityProps &
-  TouchableNativeFeedback) => {
-  const {
-    alignItems,
-    alignSelf,
-    bg,
-    flex,
-    flexDirection,
-    flexWrap,
-    height,
-    justifyContent,
-    m,
-    mb,
-    ml,
-    mr,
-    mt,
-    mx,
-    my,
-    p,
-    pb,
-    pl,
-    pr,
-    pt,
-    px,
-    py,
-    shadow,
-    width,
-  } = props;
-  const marginProps = {
-    m,
-    mb,
-    ml,
-    mr,
-    mt,
-    mx,
-    my,
-  };
-  const innerBoxProps = {
-    alignItems,
-    alignSelf,
-    bg,
-    flex,
-    flexDirection,
-    flexWrap,
-    height,
-    justifyContent,
-    p,
-    pb,
-    pl,
-    pr,
-    pt,
-    px,
-    py,
-    shadow,
-    width,
-  };
+}: TouchableProps & TouchableOpacityProps & TouchableHighlightProps) => (
+  <ThemeConsumer>
+    {(value: { theme: Theme }) => {
+      if (feedback === Feedback.Highlight) {
+        return (
+          <TouchableHighlight
+            style={[getStyleSheetFromBoxProps(props, value.theme), style]}
+            {...props}
+          />
+        );
+      } else if (feedback === Feedback.Opacity) {
+        return (
+          <TouchableOpacity
+            style={[getStyleSheetFromBoxProps(props, value.theme), style]}
+            {...props}
+          />
+        );
+      }
+    }}
+  </ThemeConsumer>
+);
 
-  return (
-    <ThemeConsumer>
-      {(value: { theme: Theme }) => (
-        <TouchableOpacity
-          style={[
-            getStyleSheetFromTouchableProps(marginProps, value.theme),
-            style,
-          ]}
-          {...props}
-        >
-          <Box {...innerBoxProps}>{children}</Box>
-        </TouchableOpacity>
-      )}
-    </ThemeConsumer>
-  );
+Touchable.defaultProps = {
+  feedback: Feedback.Opacity,
+  onPress: () => undefined,
 };
 
 export { Touchable };

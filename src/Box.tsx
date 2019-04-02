@@ -32,7 +32,7 @@ export interface BoxProps {
   width?: number;
 }
 
-function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
+export function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
   const {
     alignItems,
     alignSelf,
