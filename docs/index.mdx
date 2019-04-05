@@ -30,7 +30,7 @@ const colors = {
   black: '#171717',
 };
 const opacity = [1, 0.6, 0.3];
-const theme: Theme = {
+const theme = {
   borders: [
     { borderColor: colors.black, borderWidth: 1 },
     { borderColor: colors.black, borderWidth: 3 },
@@ -77,4 +77,13 @@ node node_modules/react-native-kondo/init.js
 
 Make changes so it matches **your** design system and then wrap your application with a `<ThemeProvider />`
 
-**TODO**
+```
+import { ThemeProvider } from 'react-native-kondo'
+// ...
+
+import theme from 'path/to/your/theme'
+
+<ThemeProvider theme={theme}>
+  <App />
+</ThemeProvider>
+```
