@@ -1,4 +1,4 @@
-export { Box, BoxProps } from './Box';
-export { Text, TextProps } from './Text';
-export { Touchable, TouchableProps } from './Touchable';
-export * from './ThemeProvider';
+export { default as Box, BoxProps } from './Box';
+export { default as Text, TextProps } from './Text';
+export { default as Touchable, TouchableProps } from './Touchable';
+export { ThemeProvider, ThemeConsumer } from './ThemeProvider';

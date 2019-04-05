@@ -56,4 +56,4 @@ Touchable.defaultProps = {
   onPress: () => undefined,
 };
 
-export { Touchable };
+export default Touchable;

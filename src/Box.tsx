@@ -147,4 +147,4 @@ const Box = ({ style, ...props }: BoxProps) => (
   </ThemeConsumer>
 );
 
-export { Box };
+export default Box;

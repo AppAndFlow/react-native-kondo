@@ -57,4 +57,4 @@ const Text = ({ style, ...props }: TextProps) => (
   </ThemeConsumer>
 );
 
-export { Text };
+export default Text;
