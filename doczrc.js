@@ -3,5 +3,4 @@ module.exports = {
   native: true,
   themeConfig: { showPlaygroundEditor: true },
   typescript: true,
-  mode: 'dark',
 };

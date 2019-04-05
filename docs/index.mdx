@@ -78,12 +78,17 @@ node node_modules/react-native-kondo/init.js
 Make changes so it matches **your** design system and then wrap your application with a `<ThemeProvider />`
 
 ```
-import { ThemeProvider } from 'react-native-kondo'
-// ...
+import * as React from 'react';
+import { ThemeProvider } from 'react-native-kondo';
 
-import theme from 'path/to/your/theme'
+import HomeScreen from './HomeScreen';
+import theme from './theme';
 
-<ThemeProvider theme={theme}>
-  <App />
-</ThemeProvider>
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <HomeScreen />
+  </ThemeProvider>
+);
+
+export default App;
 ```
