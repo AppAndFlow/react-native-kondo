@@ -15,27 +15,33 @@ enum Feedback {
   Opacity = 'opacity',
 }
 
-export interface TouchableProps extends BoxProps {
-  feedback: Feedback;
+export interface TouchableProps
+  extends BoxProps,
+    TouchableOpacityProps,
+    TouchableHighlightProps {
+  feedback?: Feedback;
+  children: React.ReactNode;
 }
 
-const Touchable = ({
-  feedback,
-  style,
-  ...props
-}: TouchableProps & TouchableOpacityProps & TouchableHighlightProps) => (
+const Touchable = ({ style, ...props }: TouchableProps) => (
   <ThemeConsumer>
     {(value: { theme: Theme }) => {
-      if (feedback === Feedback.Highlight) {
+      if (React.Children.count(props.children) > 1) {
+        throw new Error(
+          'Touchable expects one single React element as children',
+        );
+      }
+
+      if (props.feedback === Feedback.Opacity) {
         return (
-          <TouchableHighlight
+          <TouchableOpacity
             style={[getStyleSheetFromBoxProps(props, value.theme), style]}
             {...props}
           />
         );
-      } else if (feedback === Feedback.Opacity) {
+      } else if (props.feedback === Feedback.Highlight) {
         return (
-          <TouchableOpacity
+          <TouchableHighlight
             style={[getStyleSheetFromBoxProps(props, value.theme), style]}
             {...props}
           />

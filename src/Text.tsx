@@ -9,7 +9,7 @@ import {
 import { Theme } from './theme';
 import { ThemeConsumer } from './ThemeProvider';
 
-export interface TextProps {
+export interface TextProps extends ReactNativeTextProps {
   color?: string;
   fontFamily?: TextStyle['fontFamily'];
   fontSize?: number;
@@ -46,7 +46,7 @@ function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
   return StyleSheet.flatten([style, { textAlign }]);
 }
 
-const Text = ({ style, ...props }: TextProps & ReactNativeTextProps) => (
+const Text = ({ style, ...props }: TextProps) => (
   <ThemeConsumer>
     {(value: { theme: Theme }) => (
       <ReactNativeText

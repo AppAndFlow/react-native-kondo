@@ -4,7 +4,7 @@ import { StyleSheet, View, ViewProps, ViewStyle } from 'react-native';
 import { Theme, Shadow, Border } from './theme';
 import { ThemeConsumer } from './ThemeProvider';
 
-export interface BoxProps {
+export interface BoxProps extends ViewProps {
   alignItems?: ViewStyle['alignItems'];
   alignSelf?: ViewStyle['alignSelf'];
   bg?: string;
@@ -136,7 +136,7 @@ export function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
   ]);
 }
 
-const Box = ({ style, ...props }: BoxProps & ViewProps) => (
+const Box = ({ style, ...props }: BoxProps) => (
   <ThemeConsumer>
     {(value: { theme: Theme }) => (
       <View
