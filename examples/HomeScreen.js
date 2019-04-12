@@ -9,8 +9,8 @@ const HomeScreen = () => (
     </Text>
     <Touchable
       bg="plum"
-      p={3}
-      m={4}
+      p={4}
+      m={2}
       shadow={0}
       hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}
       feedback="highlight"
@@ -23,12 +23,23 @@ const HomeScreen = () => (
     <Touchable
       bg="honeydew"
       p={3}
-      m={4}
+      m={2}
       hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}
       style={{ borderRadius: 5 }}
     >
       <Text color="black" fontSize={3}>
         Touchable with opacity
+      </Text>
+    </Touchable>
+    <Touchable
+      bg="aquamarine"
+      p={2}
+      m={2}
+      hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}
+      feedback="none"
+    >
+      <Text color="black" fontSize={3}>
+        Touchable without feedback
       </Text>
     </Touchable>
   </Box>
