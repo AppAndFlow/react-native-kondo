@@ -40,7 +40,11 @@ const Touchable = ({ style, ...props }: TouchableProps) => (
         );
       }
 
-      if (props.native && Platform.OS === 'android') {
+      if (
+        props.native &&
+        props.feedback !== Feedback.None &&
+        Platform.OS === 'android'
+      ) {
         const { children, tintColor = '#131313', ...rest } = props;
 
         return (

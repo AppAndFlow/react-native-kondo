@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Text, Touchable } from 'react-native-kondo';
 
 const HomeScreen = () => (
-  <Box flex={1} justifyContent="center" alignItems="center">
+  <Box flex={1} justifyContent="center" alignItems="center" bg="linen">
     <Box width={100} height={100} bg="crimson" m={4} border={0} />
     <Text fontSize={4} m={4}>
       Text <Text color="tomato">tomato</Text>
