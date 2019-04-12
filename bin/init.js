@@ -7,7 +7,7 @@ const path = require('path');
 
 function init() {
   fs.copyFileSync(
-    path.resolve(__dirname, '..', 'dist', 'src', 'theme.ts'),
+    path.resolve(__dirname, '..', 'dist', 'src', 'theme.js'),
     path.resolve(process.cwd(), 'theme.js'),
   );
 }
