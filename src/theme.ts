@@ -24,7 +24,27 @@ export interface Theme {
 }
 
 const colors = {
-  black: '#171717',
+  amber: '#ffca28',
+  black: '#000000',
+  blue: '#42a5f5',
+  blueGray: '#78909c',
+  brown: '#8d6e63',
+  cyan: '#26c6da',
+  deepOrange: '#ff7043',
+  deepPurple: '#7e57c2',
+  gray: '#bdbdbd',
+  green: '#66bb6a',
+  indigo: '#5c6bc0',
+  lightBlue: '#29b6f6',
+  lightGreen: '#9ccc65',
+  lime: '#d4e157',
+  orange: '#ffa726',
+  pink: '#ec407a',
+  purple: '#ab47bc',
+  red: '#ef5350',
+  teal: '#26a69a',
+  white: '#ffffff',
+  yellow: '#ffee58',
 };
 const opacity = [1, 0.6, 0.3];
 const theme: Theme = {
