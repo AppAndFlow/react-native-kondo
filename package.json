@@ -6,6 +6,9 @@
   "files": [
     "dist/src"
   ],
+  "bin": {
+    "init": "bin/init.js"
+  },
   "scripts": {
     "build": "tsc",
     "docz:build": "docz build",

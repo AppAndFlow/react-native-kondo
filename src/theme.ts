@@ -27,7 +27,7 @@ const colors = {
   black: '#171717',
 };
 const opacity = [1, 0.6, 0.3];
-const theme: Theme = {
+const theme = {
   borders: [
     { borderColor: colors.black, borderWidth: 1 },
     { borderColor: colors.black, borderWidth: 3 },
