@@ -3,16 +3,17 @@ name: Touchable
 menu: Components
 ---
 
-import { Playground, PropsTable } from 'docz'
+import { Playground } from 'docz';
 
-import { Box, Text, Touchable } from '../src';
+import { Text, Touchable } from '../src';
 
 # Touchable
 
-Touchable renders a TouchableOpacity or a TouchableHighlight
+Touchable renders a `<TouchableHighlight />`, `<TouchableNativeFeedback />`, `<TouchableOpacity />` or `<TouchableWithoutFeedback />` based on the `feedback` props
 
 ## Basic usage
 
+```jsx
 <Playground>
   <Touchable
     bg="cornflowerblue"
@@ -24,8 +25,12 @@ Touchable renders a TouchableOpacity or a TouchableHighlight
     <Text color="white">Touchable</Text>
   </Touchable>
 </Playground>
+```
 
 ## Props
 
+- `feedback?`: `enum (Feedback.Opacity | Feedback.Highlight | Feedback.None)` (defaults to `Feedback.Opacity`)
+- `native?`: `boolean` (defaults to `true`)
+- `tintColor?`: `string`
 - Any react-native-kondo `<Box />` props
-- Any React Native `<TouchableHighlightProps />`, `<TouchableNativeFeedbackProps />`, `<TouchableOpacityProps />`, `<TouchableWithoutFeedback />` props
+- Any React Native `<TouchableHighlightProps />`, `<TouchableNativeFeedbackProps />`, `<TouchableOpacityProps />`, `<TouchableWithoutFeedbackProps />` props

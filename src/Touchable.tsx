@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   TouchableOpacityProps,
   TouchableWithoutFeedback,
+  TouchableWithoutFeedbackProps,
 } from 'react-native';
 
 import Box, { BoxProps, getStyleSheetFromBoxProps } from './Box';
@@ -25,7 +26,7 @@ export interface TouchableProps
     TouchableHighlightProps,
     TouchableNativeFeedbackProps,
     TouchableOpacityProps,
-    TouchableWithoutFeedback {
+    TouchableWithoutFeedbackProps {
   feedback?: Feedback;
   native?: boolean;
   tintColor?: string;

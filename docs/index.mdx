@@ -9,7 +9,7 @@ route: /
 
 Install react-native-kondo
 
-```
+```sh
 npm i react-native-kondo
 ```
 
@@ -17,7 +17,7 @@ npm i react-native-kondo
 
 Import and use the the components
 
-```
+```jsx
 import { Box, Text, Touchable } from 'react-native-kondo';
 ```
 
@@ -25,7 +25,7 @@ import { Box, Text, Touchable } from 'react-native-kondo';
 
 A minimal default theme is already provided as part of the library. You don't need to do anything else to use its values within react-native-kondo components.
 
-```
+```js
 const colors = {
   black: '#171717',
 };
@@ -71,13 +71,13 @@ const theme = {
 
 You'll almost inevitably want to edit this theme. You can generate a _copy_ of this theme with the following command.
 
-```
+```sh
 node node_modules/react-native-kondo/init.js
 ```
 
 Make changes so it matches **your** design system and then wrap your application with a `<ThemeProvider />`
 
-```
+```jsx
 import * as React from 'react';
 import { ThemeProvider } from 'react-native-kondo';
 

@@ -10,7 +10,7 @@
 
 ## Installation
 
-```
+```sh
 npm i react-native-kondo
 ```
 
@@ -18,6 +18,6 @@ npm i react-native-kondo
 
 Import and use the the components
 
-```
+```js
 import { Box, Text, Touchable } from 'react-native-kondo';
 ```

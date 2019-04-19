@@ -3,24 +3,27 @@ name: Box
 menu: Components
 ---
 
-import { Playground, PropsTable } from 'docz'
+import { Playground } from 'docz';
 
 import { Box, Text } from '../src';
 
 # Box
 
-Box renders a View
+Box renders a `<View />`
 
 ## Basic usage
 
+```jsx
 <Playground>
   <Box justifyContent="center" alignItems="center" height={200}>
     <Box bg="salmon" height={128} width={128} shadow={1} />
   </Box>
 </Playground>
+```
 
 ## With different sizes, spacing and background colors
 
+```jsx
 <Playground>
   <Box bg="honeydew" p={4}>
     <Box bg="tomato" p={2} height={64}>
@@ -34,32 +37,33 @@ Box renders a View
     </Box>
   </Box>
 </Playground>
+```
 
 ## Props
 
 - `alignItems?`: `ViewStyle['alignItems']`
 - `alignSelf?`: `ViewStyle['alignSelf']`
-- `bg?`: `string`
-- `border?`: `number | { borderWidth?: number; borderColor?: string; }`
+- `bg?`: `string` (name from your color object, if it can't find it'll use string as color)
+- `border?`: `number | { borderWidth?: number; borderColor?: string; }` (index to use from your borders array or a Border object)
 - `flex?`: `number`
 - `flexDirection?`: `ViewStyle['flexDirection']`
 - `flexWrap?`: `ViewStyle['flexWrap']`
 - `height?`: `number`
 - `justifyContent?`: `ViewStyle['justifyContent']`
-- `m?`: `number`
-- `mb?`: `number`
-- `ml?`: `number`
-- `mr?`: `number`
-- `mt?`: `number`
-- `mx?`: `number`
-- `my?`: `number`
-- `p?`: `number`
-- `pb?`: `number`
-- `pl?`: `number`
-- `pr?`: `number`
-- `pt?`: `number`
-- `px?`: `number`
-- `py?`: `number`
-- `shadow?`: `number | { elevation?: number; shadowColor?: string | string; shadowOffset?: { height: number; width: number }; shadowOpacity?: number | number; shadowRadius?: number; }`
+- `m?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `mb?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `ml?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `mr?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `mt?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `mx?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `my?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `p?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `pb?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `pl?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `pr?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `pt?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `px?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `py?`: `number` (index to use from your space array, if negative or higher, it'll use it as spacing)
+- `shadow?`: `number | { elevation?: number; shadowColor?: string | string; shadowOffset?: { height: number; width: number }; shadowOpacity?: number | number; shadowRadius?: number; }` (index to use from your shadows array or a Shadow object)
 - `width?`: `number`
 - Any React Native `<View />` props

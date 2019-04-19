@@ -3,36 +3,46 @@ name: Text
 menu: Components
 ---
 
-import { Playground, PropsTable } from 'docz'
+import { Playground } from 'docz';
 
 import { Box, Text } from '../src';
 
 # Text
 
-Text renders a Text
+Text renders a `<Text />`
 
 ## Basic usage
 
+```jsx
 <Playground>
-  <Text fontSize={3} color="salmon">Text</Text>
+  <Text fontSize={3} color="salmon">
+    Text
+  </Text>
 </Playground>
+```
 
 ## With different sizes and letter spacings
 
+```jsx
 <Playground>
   <Box>
     <Text fontSize={1}>Normal text</Text>
-    <Text fontSize={4} letterSpacing={1}>Large text</Text>
-    <Text fontSize={36} letterSpacing={2}>Giant text</Text>
+    <Text fontSize={4} letterSpacing={1}>
+      Large text
+    </Text>
+    <Text fontSize={36} letterSpacing={2}>
+      Giant text
+    </Text>
   </Box>
 </Playground>
+```
 
 ## Props
 
-- `color?`: `string`
+- `color?`: `string` (name from your color object, if it can't find it'll use string as color)
 - `fontFamily?`: `TextStyle['fontFamily']`
-- `fontSize?`: `number`
-- `letterSpacing?`: `number`
-- `lineHeight?`: `number`
+- `fontSize?`: `number` (index to use from your space array, if negative or higher, it'll use it as size)
+- `letterSpacing?`: `number` (index to use from your space array, if negative or higher, it'll use it as size)
+- `lineHeight?`: `number` (index to use from your lineHeights array, if negative or higher it'll use it as height)
 - `textAlign?`: `TextStyle['textAlign']`
 - Any React Native `<Text />` props
