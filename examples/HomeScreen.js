@@ -24,6 +24,7 @@ const HomeScreen = () => (
       bg="honeydew"
       p={3}
       m={2}
+      border={0}
       hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}
       style={{ borderRadius: 5 }}
     >

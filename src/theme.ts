@@ -50,8 +50,8 @@ const opacity = [1, 0.6, 0.3];
 const theme: Theme = {
   borders: [
     { borderColor: colors.black, borderWidth: 1 },
+    { borderColor: colors.black, borderWidth: 2 },
     { borderColor: colors.black, borderWidth: 3 },
-    { borderColor: colors.black, borderWidth: 5 },
   ],
   colors,
   fonts: {},

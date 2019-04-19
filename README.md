@@ -4,12 +4,20 @@
   </a>
 </div>
 
-<div align="center">
+<div>
   <strong>React Native primitives and utilities for design systems</strong>
 </div>
 
 ## Installation
 
-```sh
+```
 npm i react-native-kondo
+```
+
+## Usage
+
+Import and use the the components
+
+```
+import { Box, Text, Touchable } from 'react-native-kondo';
 ```
