@@ -1,5 +1,5 @@
 <div>
-  <a href="https://github.com/AppAndFlow/react-native-kondo">
+  <a href="https://react-native-kondo.netlify.com">
     <img alt="react-native-kondo logo" src="./assets/logo.png"/>
   </a>
 </div>
@@ -21,3 +21,7 @@ Import and use the the components
 ```js
 import { Box, Text, Touchable } from 'react-native-kondo';
 ```
+
+## Documentation
+
+https://react-native-kondo.netlify.com
