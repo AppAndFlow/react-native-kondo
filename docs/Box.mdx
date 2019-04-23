@@ -13,31 +13,27 @@ Box renders a `<View />`
 
 ## Basic usage
 
-```jsx
 <Playground>
-  <Box justifyContent="center" alignItems="center" height={200}>
+  <Box justifyContent="center" alignItems="center">
     <Box bg="salmon" height={128} width={128} shadow={1} />
   </Box>
 </Playground>
-```
 
 ## With different sizes, spacing and background colors
 
-```jsx
 <Playground>
   <Box bg="honeydew" p={4}>
-    <Box bg="tomato" p={2} height={64}>
+    <Box bg="tomato" p={2} height={128}>
       <Text>One</Text>
     </Box>
-    <Box bg="#7fffd4" alignItems="center" p={2}>
+    <Box alignItems="center" bg="#7fffd4" p={2}>
       <Text>Two</Text>
     </Box>
-    <Box bg="rgb(30, 144, 255)" alignItems="flex-end" p={2}>
+    <Box alignItems="flex-end" bg="rgb(238, 236, 137)" p={2}>
       <Text>Three</Text>
     </Box>
   </Box>
 </Playground>
-```
 
 ## Props
 
