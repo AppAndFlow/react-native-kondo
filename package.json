@@ -2,10 +2,7 @@
   "name": "react-native-kondo",
   "version": "1.0.0",
   "description": "React Native primitives and utilities for design systems",
-  "main": "src/index.js",
-  "files": [
-    "src"
-  ],
+  "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
     "docz:build": "docz build",
