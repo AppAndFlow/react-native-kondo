@@ -30,7 +30,7 @@ export interface BoxProps extends ViewProps {
   py?: number;
   shadow?: number | Shadow;
   width?: number;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
