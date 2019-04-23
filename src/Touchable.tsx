@@ -15,7 +15,7 @@ import Box, { BoxProps, getStyleSheetFromBoxProps } from './Box';
 import { Theme } from './theme';
 import { ThemeConsumer } from './ThemeProvider';
 
-enum Feedback {
+export enum Feedback {
   Opacity = 'opacity',
   Highlight = 'highlight',
   None = 'none',
