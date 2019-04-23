@@ -16,6 +16,7 @@ export interface TextProps extends ReactNativeTextProps {
   letterSpacing?: number;
   lineHeight?: number;
   textAlign?: TextStyle['textAlign'];
+  children: React.ReactNode;
 }
 
 function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
