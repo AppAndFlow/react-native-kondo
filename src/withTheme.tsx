@@ -16,7 +16,9 @@ const withTheme = (WrappedComponent: React.ComponentType<any>) => {
     render() {
       return (
         <ThemeConsumer>
-          {theme => <WrappedComponent theme={theme} {...this.props} />}
+          {(value: { theme: Theme }) => (
+            <WrappedComponent theme={value.theme} {...this.props} />
+          )}
         </ThemeConsumer>
       );
     }
