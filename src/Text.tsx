@@ -43,6 +43,10 @@ function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
 
   if (props.fontFamily != undefined) {
     style.fontFamily = theme.fonts[props.fontFamily] || props.fontFamily;
+  } else {
+    if (theme.fonts.base) {
+      style.fontFamily = theme.fonts.base;
+    }
   }
 
   if (props.fontSize != undefined) {
