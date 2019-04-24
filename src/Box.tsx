@@ -9,6 +9,7 @@ export interface BoxProps extends ViewProps {
   alignSelf?: ViewStyle['alignSelf'];
   bg?: string;
   border?: number | Border;
+  children?: React.ReactNode;
   flex?: number;
   flexDirection?: ViewStyle['flexDirection'];
   flexWrap?: ViewStyle['flexWrap'];
@@ -30,7 +31,6 @@ export interface BoxProps extends ViewProps {
   py?: number;
   shadow?: number | Shadow;
   width?: number;
-  children?: React.ReactNode;
 }
 
 export function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
