@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Theme } from './theme';
 import { ThemeConsumer } from './ThemeProvider';
 
-export interface WithThemeInjectedProps {
+export interface ThemeInjectedProps {
   theme: Theme;
 }
 
