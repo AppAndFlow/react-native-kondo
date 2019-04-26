@@ -1,6 +1,6 @@
 {
   "name": "react-native-kondo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Native primitives and utilities for design systems",
   "main": "dist/index.js",
   "files": [
@@ -45,7 +45,7 @@
     "typescript": "^3.4.4"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-native": "^0.59.5"
+    "react": "^16.8.0",
+    "react-native": "^0.59.0"
   }
 }
