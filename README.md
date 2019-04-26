@@ -4,9 +4,11 @@
   </a>
 </div>
 
-<div>
-  <strong>React Native primitives and utilities for design systems</strong>
-</div>
+# react-native-kondo
+
+React Native primitives and utilities for design systems.
+
+Draws a lot of inspiration from [Rebass](https://github.com/jxnblk/rebass).
 
 ## Installation
 
@@ -24,7 +26,7 @@ import { Box, Text, Touchable } from 'react-native-kondo';
 
 const HomeScreen = () => (
   <Box flex={1} justifyContent="space-between" bg="white" px={3} py={5}>
-    <Text fontSize={5} textAlign="center" color="deepPurple">
+    <Text fontSize={5} color="deepPurple" textAlign="center">
       Home
     </Text>
     <Box>
