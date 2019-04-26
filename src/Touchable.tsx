@@ -29,13 +29,12 @@ export interface TouchableProps
     TouchableWithoutFeedbackProps {
   feedback?: Feedback;
   native?: boolean;
-  tintColor?: string;
 }
 
-const Touchable = ({ style, ...props }: TouchableProps) => (
+const Touchable = ({ children, style, ...props }: TouchableProps) => (
   <ThemeConsumer>
     {(value: { theme: Theme }) => {
-      if (React.Children.count(props.children) > 1) {
+      if (React.Children.count(children) > 1) {
         throw new Error(
           'Touchable expects one single React element as children',
         );
@@ -46,13 +45,8 @@ const Touchable = ({ style, ...props }: TouchableProps) => (
         props.feedback !== Feedback.None &&
         Platform.OS === 'android'
       ) {
-        const { children, tintColor = '#131313', ...rest } = props;
-
         return (
-          <TouchableNativeFeedback
-            background={TouchableNativeFeedback.Ripple(tintColor)}
-            {...rest}
-          >
+          <TouchableNativeFeedback {...props}>
             <Box style={[getStyleSheetFromBoxProps(props, value.theme), style]}>
               {children}
             </Box>
@@ -63,20 +57,22 @@ const Touchable = ({ style, ...props }: TouchableProps) => (
           <TouchableHighlight
             style={[getStyleSheetFromBoxProps(props, value.theme), style]}
             {...props}
-          />
+          >
+            {children}
+          </TouchableHighlight>
         );
       } else if (props.feedback === Feedback.Opacity) {
         return (
           <TouchableOpacity
             style={[getStyleSheetFromBoxProps(props, value.theme), style]}
             {...props}
-          />
+          >
+            {children}
+          </TouchableOpacity>
         );
       } else if (props.feedback === Feedback.None) {
-        const { children, ...rest } = props;
-
         return (
-          <TouchableWithoutFeedback {...rest}>
+          <TouchableWithoutFeedback {...props}>
             <Box style={[getStyleSheetFromBoxProps(props, value.theme), style]}>
               {children}
             </Box>
