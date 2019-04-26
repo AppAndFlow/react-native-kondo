@@ -4,7 +4,7 @@
   "description": "React Native primitives and utilities for design systems",
   "main": "dist/index.js",
   "files": [
-    "dist/src"
+    "dist"
   ],
   "scripts": {
     "build": "tsc",
