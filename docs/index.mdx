@@ -7,7 +7,7 @@ route: /
 
 ## Installation
 
-Install react-native-kondo
+Install react-native-kondo.
 
 ```sh
 npm i react-native-kondo
@@ -15,7 +15,7 @@ npm i react-native-kondo
 
 ## Usage
 
-Import and use the the components
+Import and use the the components.
 
 ```jsx
 import * as React from 'react';
@@ -118,7 +118,8 @@ You'll almost inevitably want to edit this theme. You can generate a _copy_ of t
 node node_modules/react-native-kondo/init.js
 ```
 
-Make changes so it matches **your** design system and then wrap your application with a `<ThemeProvider />`
+Make changes so it matches **your** design system and wrap your application with a `<ThemeProvider />`.
+The react-native-kondo components will now use your theme object.
 
 ```jsx
 import * as React from 'react';
@@ -133,3 +134,25 @@ const App = () => (
   </ThemeProvider>
 );
 ```
+
+If you really need to access your theme outside of react-native-kondo components, you can do so with the `withTheme` higher-order component (HOC).
+
+```jsx
+import * as React from 'react';
+import { TextInput } from 'react-native';
+import { Box, withTheme } from 'react-native-kondo';
+
+const Input = props => {
+  return (
+    <TextInput
+      selectionColor={props.theme.colors.lightGreen}
+      style={{ fontFamily: props.theme.fonts.base }}
+      {...props}
+    />
+  );
+};
+
+export default withTheme(Input);
+```
+
+Alternatively, you can use the `<ThemeConsumer />` component if you prefer using a render props (function as children) API.
