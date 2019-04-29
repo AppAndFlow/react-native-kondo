@@ -121,15 +121,21 @@ function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
   return StyleSheet.flatten([style, { textAlign }]);
 }
 
-const Text = ({ style, ...props }: TextProps) => (
-  <ThemeConsumer>
-    {(value: { theme: Theme }) => (
-      <ReactNativeText
-        style={[getStyleSheetFromTextProps(props, value.theme), style]}
-        {...props}
-      />
-    )}
-  </ThemeConsumer>
-);
+class Text extends React.Component<TextProps> {
+  render() {
+    const { style, ...props } = this.props;
+
+    return (
+      <ThemeConsumer>
+        {(value: { theme: Theme }) => (
+          <ReactNativeText
+            style={[getStyleSheetFromTextProps(props, value.theme), style]}
+            {...props}
+          />
+        )}
+      </ThemeConsumer>
+    );
+  }
+}
 
 export default Text;

@@ -137,15 +137,21 @@ export function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
   ]);
 }
 
-const Box = ({ style, ...props }: BoxProps) => (
-  <ThemeConsumer>
-    {(value: { theme: Theme }) => (
-      <View
-        style={[getStyleSheetFromBoxProps(props, value.theme), style]}
-        {...props}
-      />
-    )}
-  </ThemeConsumer>
-);
+class Box extends React.Component<BoxProps> {
+  render() {
+    const { style, ...props } = this.props;
+
+    return (
+      <ThemeConsumer>
+        {(value: { theme: Theme }) => (
+          <View
+            style={[getStyleSheetFromBoxProps(props, value.theme), style]}
+            {...props}
+          />
+        )}
+      </ThemeConsumer>
+    );
+  }
+}
 
 export default Box;
