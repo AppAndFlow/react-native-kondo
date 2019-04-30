@@ -14,7 +14,7 @@ export interface Shadow {
 export interface Theme {
   borders: Border[];
   colors: { [key: string]: string };
-  fonts: { [key: string]: string } | { base: null };
+  fonts: { [key: string]: string | undefined };
   fontSizes: number[];
   letterSpacings: number[];
   lineHeights: number[];
@@ -55,7 +55,7 @@ const theme: Theme = {
   ],
   colors,
   fonts: {
-    base: null,
+    base: undefined,
   },
   fontSizes: [12, 14, 16, 20, 24, 32],
   letterSpacings: [0, 1, 2],
