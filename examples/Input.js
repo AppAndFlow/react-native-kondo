@@ -1,8 +1,8 @@
 import React from 'react';
-import { TextInput } from 'react-native';
+import { TextInput, TextInputProps } from 'react-native';
 import { withTheme } from 'react-native-kondo';
 
-class Input extends React.Component {
+class Input extends React.Component<TextInputProps> {
   _textInput = React.createRef();
 
   focus() {

@@ -8,7 +8,9 @@ export interface ThemeInjectedProps {
   theme: Theme;
 }
 
-const withTheme = (WrappedComponent: any) => {
+function withTheme<OuterProps>(
+  WrappedComponent: React.ComponentType<OuterProps & ThemeInjectedProps>,
+): React.ComponentClass<OuterProps> {
   class WithThemeComponent extends React.Component<any> {
     static displayName = `withTheme(${WrappedComponent.displayName ||
       WrappedComponent.name ||
@@ -20,6 +22,7 @@ const withTheme = (WrappedComponent: any) => {
       return (
         <ThemeConsumer>
           {(value: { theme: Theme }) => (
+            // @ts-ignore
             <WrappedComponent
               ref={forwardedRef}
               theme={value.theme}
@@ -32,10 +35,11 @@ const withTheme = (WrappedComponent: any) => {
   }
 
   hoistNonReactStatics(WithThemeComponent, WrappedComponent);
-  // eslint-disable-next-line react/display-name
+  // @ts-ignore
+  // eslint-disable-next-line
   return React.forwardRef((props, ref) => (
     <WithThemeComponent forwardedRef={ref} {...props} />
   ));
-};
+}
 
 export default withTheme;
