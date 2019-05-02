@@ -8,25 +8,34 @@ export interface ThemeInjectedProps {
   theme: Theme;
 }
 
-const withTheme = (WrappedComponent: any): React.ComponentClass<any> => {
-  return hoistNonReactStatics(
-    class WithThemeComponent extends React.Component {
-      static displayName = `withTheme(${WrappedComponent.displayName ||
-        WrappedComponent.name ||
-        'Component'})`;
+const withTheme = (WrappedComponent: any) => {
+  class WithThemeComponent extends React.Component<any> {
+    static displayName = `withTheme(${WrappedComponent.displayName ||
+      WrappedComponent.name ||
+      'Component'})`;
 
-      render() {
-        return (
-          <ThemeConsumer>
-            {(value: { theme: Theme }) => (
-              <WrappedComponent theme={value.theme} {...this.props} />
-            )}
-          </ThemeConsumer>
-        );
-      }
-    },
-    WrappedComponent,
-  );
+    render() {
+      const { forwardedRef, ...props } = this.props;
+
+      return (
+        <ThemeConsumer>
+          {(value: { theme: Theme }) => (
+            <WrappedComponent
+              ref={forwardedRef}
+              theme={value.theme}
+              {...props}
+            />
+          )}
+        </ThemeConsumer>
+      );
+    }
+  }
+
+  hoistNonReactStatics(WithThemeComponent, WrappedComponent);
+  // eslint-disable-next-line react/display-name
+  return React.forwardRef((props, ref) => (
+    <WithThemeComponent forwardedRef={ref} {...props} />
+  ));
 };
 
 export default withTheme;
