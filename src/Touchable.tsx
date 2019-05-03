@@ -58,7 +58,10 @@ class Touchable extends React.Component<TouchableProps> {
             return (
               <TouchableNativeFeedback {...props}>
                 <Box
-                  style={[getStyleSheetFromBoxProps(props, value.theme), style]}
+                  style={[
+                    getStyleSheetFromBoxProps(props, value.theme).box,
+                    style,
+                  ]}
                 >
                   {children}
                 </Box>
@@ -67,7 +70,10 @@ class Touchable extends React.Component<TouchableProps> {
           } else if (props.feedback === Feedback.Highlight) {
             return (
               <TouchableHighlight
-                style={[getStyleSheetFromBoxProps(props, value.theme), style]}
+                style={[
+                  getStyleSheetFromBoxProps(props, value.theme).box,
+                  style,
+                ]}
                 {...props}
               >
                 {children}
@@ -76,7 +82,10 @@ class Touchable extends React.Component<TouchableProps> {
           } else if (props.feedback === Feedback.Opacity) {
             return (
               <TouchableOpacity
-                style={[getStyleSheetFromBoxProps(props, value.theme), style]}
+                style={[
+                  getStyleSheetFromBoxProps(props, value.theme).box,
+                  style,
+                ]}
                 {...props}
               >
                 {children}
@@ -86,7 +95,10 @@ class Touchable extends React.Component<TouchableProps> {
             return (
               <TouchableWithoutFeedback {...props}>
                 <Box
-                  style={[getStyleSheetFromBoxProps(props, value.theme), style]}
+                  style={[
+                    getStyleSheetFromBoxProps(props, value.theme).box,
+                    style,
+                  ]}
                 >
                   {children}
                 </Box>

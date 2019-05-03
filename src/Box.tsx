@@ -123,9 +123,9 @@ export function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
     };
   }
 
-  return StyleSheet.flatten([
-    style,
-    {
+  return StyleSheet.create({
+    box: {
+      ...style,
       alignItems,
       alignSelf,
       flex,
@@ -134,7 +134,7 @@ export function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
       justifyContent,
       width,
     },
-  ]);
+  });
 }
 
 class Box extends React.Component<BoxProps> {
@@ -145,7 +145,7 @@ class Box extends React.Component<BoxProps> {
       <ThemeConsumer>
         {(value: { theme: Theme }) => (
           <View
-            style={[getStyleSheetFromBoxProps(props, value.theme), style]}
+            style={[getStyleSheetFromBoxProps(props, value.theme).box, style]}
             {...props}
           />
         )}

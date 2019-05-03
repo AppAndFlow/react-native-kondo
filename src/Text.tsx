@@ -118,7 +118,12 @@ function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
     style.paddingVertical = theme.space[props.py] || props.py;
   }
 
-  return StyleSheet.flatten([style, { textAlign }]);
+  return StyleSheet.create({
+    text: {
+      ...style,
+      textAlign,
+    },
+  });
 }
 
 class Text extends React.Component<TextProps> {
@@ -129,7 +134,7 @@ class Text extends React.Component<TextProps> {
       <ThemeConsumer>
         {(value: { theme: Theme }) => (
           <ReactNativeText
-            style={[getStyleSheetFromTextProps(props, value.theme), style]}
+            style={[getStyleSheetFromTextProps(props, value.theme).text, style]}
             {...props}
           />
         )}
