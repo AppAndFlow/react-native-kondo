@@ -4,7 +4,7 @@ module.exports = {
   themeConfig: {
     showPlaygroundEditor: true,
     colors: {
-      primary: 'rgb(238, 236, 137)',
+      primary: 'rgb(0, 0, 0)',
     },
   },
   typescript: true,

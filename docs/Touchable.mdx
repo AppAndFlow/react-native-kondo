@@ -5,11 +5,11 @@ menu: Components
 
 import { Playground } from 'docz';
 
-import { Text, Touchable } from '../src';
+import {Box, Text, Touchable } from '../src';
 
 # Touchable
 
-Touchable renders a `<TouchableHighlight />`, `<TouchableNativeFeedback />`, `<TouchableOpacity />` or `<TouchableWithoutFeedback />` based on the `feedback` props
+Touchable renders a React Native `<TouchableHighlight />`, `<TouchableNativeFeedback />`, `<TouchableOpacity />` or `<TouchableWithoutFeedback />` based on the `feedback` props
 
 ## Basic usage
 
@@ -20,7 +20,9 @@ Touchable renders a `<TouchableHighlight />`, `<TouchableNativeFeedback />`, `<T
     bg="cornflowerblue"
     p={3}
   >
-    <Text color="white">Touchable</Text>
+    <Text fontSize={2} color="ghostwhite">
+      Touchable
+    </Text>
   </Touchable>
 </Playground>
 

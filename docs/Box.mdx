@@ -9,27 +9,27 @@ import { Box, Text } from '../src';
 
 # Box
 
-Box renders a `<View />`
+Box renders a React Native `<View />`
 
 ## Basic usage
 
 <Playground>
   <Box justifyContent="center" alignItems="center">
-    <Box bg="salmon" height={128} width={128} shadow={1} />
+    <Box bg="cornflowerblue" width={128} height={128} shadow={1} />
   </Box>
 </Playground>
 
-## With different sizes, spacing and background colors
+## Different sizes, spacing and background colors
 
 <Playground>
-  <Box bg="honeydew" p={4}>
-    <Box bg="tomato" p={2} height={128}>
+  <Box bg="cornflowerblue" p={2}>
+    <Box bg="tomato" height={128} p={3}>
       <Text>One</Text>
     </Box>
-    <Box alignItems="center" bg="#7fffd4" p={2}>
+    <Box alignItems="center" bg="#7fffd4" p={3}>
       <Text>Two</Text>
     </Box>
-    <Box alignItems="flex-end" bg="rgb(238, 236, 137)" p={2}>
+    <Box alignItems="flex-end" bg="rgb(238, 236, 137)" p={3}>
       <Text>Three</Text>
     </Box>
   </Box>

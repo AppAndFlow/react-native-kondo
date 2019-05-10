@@ -1,8 +1,4 @@
-<div>
-  <a href="https://react-native-kondo.netlify.com">
-    <img alt="react-native-kondo logo" src="./assets/logo.png"/>
-  </a>
-</div>
+![react-native-kondo logo](https://raw.githubusercontent.com/AppAndFlow/react-native-kondo/master/assets/logo.png)
 
 # react-native-kondo
 
@@ -21,11 +17,11 @@ npm i react-native-kondo
 Import and use the the components
 
 ```jsx
-import * as React from 'react';
+import React from 'react';
 import { Box, Text, Touchable } from 'react-native-kondo';
 
 const HomeScreen = () => (
-  <Box flex={1} justifyContent="space-between" bg="white" px={3} py={5}>
+  <Box flex={1} justifyContent="space-between" bg="white" py={5} px={3}>
     <Text fontSize={5} color="deepPurple" textAlign="center">
       Home
     </Text>
