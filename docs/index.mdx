@@ -130,7 +130,7 @@ Make changes so it matches **your** design system and wrap your application with
 The react-native-kondo components will now use your theme object.
 
 ```jsx
-import * as React from 'react';
+import React from 'react';
 import { ThemeProvider } from 'react-native-kondo';
 
 import HomeScreen from './HomeScreen';
@@ -146,7 +146,7 @@ const App = () => (
 If you really need to access your theme outside of react-native-kondo components, you can do so with the `withTheme` higher-order component (HOC).
 
 ```jsx
-import * as React from 'react';
+import React from 'react';
 import { TextInput } from 'react-native';
 import { withTheme } from 'react-native-kondo';
 
