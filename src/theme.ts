@@ -7,7 +7,7 @@ export interface Shadow {
   elevation?: number;
   shadowColor?: keyof typeof colors | string;
   shadowOffset?: { height: number; width: number };
-  shadowOpacity?: typeof opacity[0] | number;
+  shadowOpacity?: number;
   shadowRadius?: number;
 }
 
@@ -18,7 +18,6 @@ export interface Theme {
   fontSizes: number[];
   letterSpacings: number[];
   lineHeights: number[];
-  opacity: number[];
   shadows: Shadow[];
   space: number[];
 }
@@ -46,7 +45,6 @@ const colors = {
   white: '#ffffff',
   yellow: '#ffee58',
 };
-const opacity = [1, 0.6, 0.3];
 const theme: Theme = {
   borders: [
     { borderColor: colors.black, borderWidth: 1 },
@@ -60,27 +58,26 @@ const theme: Theme = {
   fontSizes: [12, 14, 16, 20, 24, 32],
   letterSpacings: [0, 1, 2],
   lineHeights: [12, 16, 32],
-  opacity,
   shadows: [
     {
       elevation: 1,
       shadowColor: colors.gray,
       shadowOffset: { height: 0, width: 0 },
-      shadowOpacity: opacity[1],
+      shadowOpacity: 0.5,
       shadowRadius: 1,
     },
     {
       elevation: 3,
       shadowColor: colors.gray,
       shadowOffset: { height: 0, width: 0 },
-      shadowOpacity: opacity[1],
+      shadowOpacity: 0.5,
       shadowRadius: 3,
     },
     {
       elevation: 5,
       shadowColor: colors.gray,
       shadowOffset: { height: 0, width: 0 },
-      shadowOpacity: opacity[1],
+      shadowOpacity: 0.5,
       shadowRadius: 5,
     },
   ],
