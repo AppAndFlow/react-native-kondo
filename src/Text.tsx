@@ -12,7 +12,7 @@ import useTheme from './useTheme';
 export interface TextProps extends ReactNativeTextProps {
   children?: React.ReactNode;
   color?: string;
-  fontFamily?: TextStyle['fontFamily'];
+  fontFamily?: string;
   fontSize?: number;
   letterSpacing?: number;
   lineHeight?: number;
@@ -126,7 +126,7 @@ function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
   });
 }
 
-function Text({ style, ...props }: TextProps) {
+const Text = ({ style, ...props }: TextProps) => {
   const theme = useTheme();
 
   return (
@@ -135,6 +135,6 @@ function Text({ style, ...props }: TextProps) {
       {...props}
     />
   );
-}
+};
 
 export default Text;

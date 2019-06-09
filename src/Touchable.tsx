@@ -30,7 +30,7 @@ export interface TouchableProps
   native?: boolean;
 }
 
-function Touchable({ children, style, ...props }: TouchableProps) {
+const Touchable = ({ children, style, ...props }: TouchableProps) => {
   if (React.Children.count(children) > 1) {
     throw new Error('Touchable expects one single React element as children');
   }
@@ -76,7 +76,7 @@ function Touchable({ children, style, ...props }: TouchableProps) {
       </TouchableWithoutFeedback>
     );
   }
-}
+};
 
 Touchable.defaultProps = {
   feedback: Feedback.Opacity,
