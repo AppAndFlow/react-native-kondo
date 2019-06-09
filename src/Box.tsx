@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, View, ViewProps, ViewStyle } from 'react-native';
 
 import { Theme, Shadow, Border } from './theme';
-import { ThemeConsumer } from './ThemeProvider';
+import useTheme from './useTheme';
 
 export interface BoxProps extends ViewProps {
   alignItems?: ViewStyle['alignItems'];
@@ -137,21 +137,15 @@ export function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
   });
 }
 
-class Box extends React.Component<BoxProps> {
-  render() {
-    const { style, ...props } = this.props;
+const Box = ({ style, ...props }: BoxProps) => {
+  const theme = useTheme();
 
-    return (
-      <ThemeConsumer>
-        {(value: { theme: Theme }) => (
-          <View
-            style={[getStyleSheetFromBoxProps(props, value.theme).box, style]}
-            {...props}
-          />
-        )}
-      </ThemeConsumer>
-    );
-  }
-}
+  return (
+    <View
+      style={[getStyleSheetFromBoxProps(props, theme).box, style]}
+      {...props}
+    />
+  );
+};
 
 export default Box;

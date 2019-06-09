@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import { Theme } from './theme';
-import { ThemeConsumer } from './ThemeProvider';
+import useTheme from './useTheme';
 
 export interface TextProps extends ReactNativeTextProps {
   children?: React.ReactNode;
@@ -126,21 +126,15 @@ function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
   });
 }
 
-class Text extends React.Component<TextProps> {
-  render() {
-    const { style, ...props } = this.props;
+function Text({ style, ...props }: TextProps) {
+  const theme = useTheme();
 
-    return (
-      <ThemeConsumer>
-        {(value: { theme: Theme }) => (
-          <ReactNativeText
-            style={[getStyleSheetFromTextProps(props, value.theme).text, style]}
-            {...props}
-          />
-        )}
-      </ThemeConsumer>
-    );
-  }
+  return (
+    <ReactNativeText
+      style={[getStyleSheetFromTextProps(props, theme).text, style]}
+      {...props}
+    />
+  );
 }
 
 export default Text;

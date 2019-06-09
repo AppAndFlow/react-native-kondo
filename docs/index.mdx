@@ -125,7 +125,7 @@ node node_modules/react-native-kondo/dist/init.js
 ```
 
 Make changes so it matches **your** design system and wrap your application with a `<ThemeProvider />`.
-The react-native-kondo components will now use your theme object.
+The components will now use your theme object.
 
 ```jsx
 import React from 'react';
@@ -141,7 +141,27 @@ const App = () => (
 );
 ```
 
-If you really need to access your theme outside of react-native-kondo components, you can do so with the `withTheme` higher-order component (HOC).
+If you need to access your theme outside of react-native-kondo components, you can use the `useTheme` hook.
+
+```jsx
+import React from 'react';
+import { TextInput } from 'react-native';
+import { useTheme } from 'react-native-kondo';
+
+const Input = props => {
+  const theme = useTheme();
+
+  return (
+    <TextInput
+      selectionColor={theme.colors.lightGreen}
+      style={{ fontSize: theme.fontSizes[3] }}
+      {...props}
+    />
+  );
+};
+```
+
+Alternatively, you can use the `withTheme` higher-order component (HOC).
 
 ```jsx
 import React from 'react';
@@ -158,5 +178,3 @@ const Input = props => (
 
 export default withTheme(Input);
 ```
-
-Alternatively, you can use the `<ThemeConsumer />` component if you prefer using a render props (function as children) API.

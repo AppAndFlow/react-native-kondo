@@ -2,7 +2,7 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 
 import { Theme } from './theme';
-import { ThemeConsumer } from './ThemeProvider';
+import useTheme from './useTheme';
 
 export interface ThemeInjectedProps {
   theme: Theme;
@@ -11,29 +11,15 @@ export interface ThemeInjectedProps {
 function withTheme<OuterProps>(
   WrappedComponent: React.ComponentType<OuterProps & ThemeInjectedProps>,
 ): React.ComponentClass<OuterProps> {
-  class WithThemeComponent extends React.Component<any> {
-    static displayName = `withTheme(${WrappedComponent.displayName ||
-      WrappedComponent.name ||
-      'Component'})`;
+  const WithThemeComponent = ({ forwardedRef, ...props }: any) => {
+    const theme = useTheme();
 
-    render() {
-      const { forwardedRef, ...props } = this.props;
+    return <WrappedComponent ref={forwardedRef} theme={theme} {...props} />;
+  };
 
-      return (
-        <ThemeConsumer>
-          {(value: { theme: Theme }) => (
-            // @ts-ignore
-            <WrappedComponent
-              ref={forwardedRef}
-              theme={value.theme}
-              {...props}
-            />
-          )}
-        </ThemeConsumer>
-      );
-    }
-  }
-
+  WithThemeComponent.displayName = `withTheme(${WrappedComponent.displayName ||
+    WrappedComponent.name ||
+    'Component'})`;
   hoistNonReactStatics(WithThemeComponent, WrappedComponent);
   // @ts-ignore
   // eslint-disable-next-line
