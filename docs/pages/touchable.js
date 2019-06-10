@@ -29,8 +29,8 @@ const Touchable = () => (
     <ul>
       <li>
         <code>feedback?: </code>
-        enum (Feedback.Opacity | Feedback.Highlight | Feedback.None) (defaults
-        to Feedback.Opacity)
+        Feedback.Opacity | Feedback.Highlight | Feedback.None) (defaults to
+        Feedback.Opacity
       </li>
       <li>
         <code>native?: </code>
