@@ -49,32 +49,37 @@ const Touchable = ({ children, style, ...props }: TouchableProps) => {
         </Box>
       </TouchableNativeFeedback>
     );
-  } else if (props.feedback === Feedback.Highlight) {
-    return (
-      <TouchableHighlight
-        style={[getStyleSheetFromBoxProps(props, theme).box, style]}
-        {...props}
-      >
-        {children}
-      </TouchableHighlight>
-    );
-  } else if (props.feedback === Feedback.Opacity) {
-    return (
-      <TouchableOpacity
-        style={[getStyleSheetFromBoxProps(props, theme).box, style]}
-        {...props}
-      >
-        {children}
-      </TouchableOpacity>
-    );
-  } else if (props.feedback === Feedback.None) {
-    return (
-      <TouchableWithoutFeedback {...props}>
-        <Box style={[getStyleSheetFromBoxProps(props, theme).box, style]}>
+  }
+
+  switch (props.feedback) {
+    case Feedback.Highlight:
+      return (
+        <TouchableHighlight
+          style={[getStyleSheetFromBoxProps(props, theme).box, style]}
+          {...props}
+        >
           {children}
-        </Box>
-      </TouchableWithoutFeedback>
-    );
+        </TouchableHighlight>
+      );
+    case Feedback.Opacity:
+      return (
+        <TouchableOpacity
+          style={[getStyleSheetFromBoxProps(props, theme).box, style]}
+          {...props}
+        >
+          {children}
+        </TouchableOpacity>
+      );
+    case Feedback.None:
+      return (
+        <TouchableWithoutFeedback {...props}>
+          <Box style={[getStyleSheetFromBoxProps(props, theme).box, style]}>
+            {children}
+          </Box>
+        </TouchableWithoutFeedback>
+      );
+    default:
+      throw new Error('Touchable expects a known feedback type');
   }
 };
 
