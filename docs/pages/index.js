@@ -1,32 +1,25 @@
----
-name: Index
-route: /
----
-
-# Index
-
-![react-native-kondo logo](https://raw.githubusercontent.com/AppAndFlow/react-native-kondo/master/assets/logo.png)
-
-# react-native-kondo
-
-React Native primitives and utilities for design systems.
-
-Draws a lot of inspiration from [Rebass](https://github.com/jxnblk/rebass).
-
-## Installation
-
-Install react-native-kondo.
-
-```sh
-npm i react-native-kondo
-```
-
-## Usage
-
-Import and use the the components.
-
-```jsx
 import React from 'react';
+
+import Code from '../components/Code';
+
+const Index = () => (
+  <div>
+    <img
+      src="https://raw.githubusercontent.com/AppAndFlow/react-native-kondo/master/assets/logo.png"
+      alt="react-native-kondo logo"
+      className="logo"
+    />
+    <p>React Native primitives and utilities for design systems.</p>
+    <p>
+      Draws a lot of inspiration from{' '}
+      <a href="https://github.com/rebassjs/rebass">Rebass</a>.
+    </p>
+    <h2 id="installation">Installation</h2>
+    <p>Install react-native-kondo.</p>
+    <Code>npm i react-native-kondo</Code>
+    <h2 id="usage">Usage</h2>
+    <p>Import and use the the components.</p>
+    <Code>{`import React from 'react';
 import { Box, Text, Touchable } from 'react-native-kondo';
 
 const HomeScreen = () => (
@@ -47,15 +40,15 @@ const HomeScreen = () => (
       </Touchable>
     </Box>
   </Box>
-);
-```
-
-## Theme
-
-A minimal default theme is already provided as part of the library. You don't need to do anything else to use its values within react-native-kondo components.
-
-```js
-const colors = {
+);`}</Code>
+    <h2 id="theme">Theme</h2>
+    <p>
+      A minimal default theme is already provided as part of the library. You do
+      not need to do anything else to use its values within react-native-kondo
+      components.
+    </p>
+    <Code>
+      {`const colors = {
   amber: '#ffca28',
   black: '#000000',
   blue: '#42a5f5',
@@ -115,20 +108,20 @@ const theme = {
     },
   ],
   space: [0, 4, 8, 16, 32, 64],
-};
-```
-
-You'll almost inevitably want to edit this theme. You can generate a _copy_ of this theme with the following command.
-
-```sh
-node node_modules/react-native-kondo/dist/init.js
-```
-
-Make changes so it matches **your** design system and wrap your application with a `<ThemeProvider />`.
-The components will now use your theme object.
-
-```jsx
-import React from 'react';
+};`}
+    </Code>
+    <p>
+      You will almost inevitably want to edit this theme. You can generate a
+      copy of this theme with the following command.
+    </p>
+    <Code>node node_modules/react-native-kondo/dist/init.js</Code>
+    <p>
+      Make changes so it matches your design system and wrap your application
+      with a <code>ThemeProvider</code>. The components will now use your theme
+      object.
+    </p>
+    <Code>
+      {`import React from 'react';
 import { ThemeProvider } from 'react-native-kondo';
 
 import HomeScreen from './HomeScreen';
@@ -138,18 +131,19 @@ const App = () => (
   <ThemeProvider theme={theme}>
     <HomeScreen />
   </ThemeProvider>
-);
-```
-
-If you need to access your theme outside of react-native-kondo components, you can use the `useTheme` hook.
-
-```jsx
-import React from 'react';
+);`}
+    </Code>
+    <p>
+      If you need to access your theme outside of react-native-kondo components,
+      you can use the <code>useTheme</code> hook.
+    </p>
+    <Code>
+      {`import React from 'react';
 import { TextInput } from 'react-native';
 import { useTheme } from 'react-native-kondo';
 
 const Input = props => {
-  const theme = useTheme();
+  const theme = useTheme()
 
   return (
     <TextInput
@@ -158,23 +152,37 @@ const Input = props => {
       {...props}
     />
   );
-};
-```
-
-Alternatively, you can use the `withTheme` higher-order component (HOC).
-
-```jsx
-import React from 'react';
+}`}
+    </Code>
+    <p>
+      Alternatively, there is the <code>withTheme</code> higher-order component
+      (HOC).
+    </p>
+    <Code>
+      {`import React from 'react';
 import { TextInput } from 'react-native';
 import { withTheme } from 'react-native-kondo';
 
 const Input = props => (
   <TextInput
-    selectionColor={props.theme.colors.lightGreen}
-    style={{ fontSize: props.theme.fontSizes[3] }}
+    selectionColor={theme.colors.lightGreen}
+    style={{ fontSize: theme.fontSizes[3] }}
     {...props}
   />
 );
 
 export default withTheme(Input);
-```
+`}
+    </Code>
+    <style jsx>
+      {`
+        .logo {
+          width: 100%;
+          height: auto;
+        }
+      `}
+    </style>
+  </div>
+);
+
+export default Index;
