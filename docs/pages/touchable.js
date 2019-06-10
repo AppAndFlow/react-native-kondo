@@ -29,7 +29,7 @@ const Touchable = () => (
     <ul>
       <li>
         <code>feedback?: </code>
-        Feedback.Opacity | Feedback.Highlight | Feedback.None) (defaults to
+        Feedback.Opacity | Feedback.Highlight | Feedback.None (defaults to
         Feedback.Opacity
       </li>
       <li>
