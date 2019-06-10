@@ -30,7 +30,7 @@ const Touchable = () => (
       <li>
         <code>feedback?: </code>
         Feedback.Opacity | Feedback.Highlight | Feedback.None (defaults to
-        Feedback.Opacity
+        Feedback.Opacity)
       </li>
       <li>
         <code>native?: </code>
