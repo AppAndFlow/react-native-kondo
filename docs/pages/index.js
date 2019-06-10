@@ -165,8 +165,8 @@ import { withTheme } from 'react-native-kondo';
 
 const Input = props => (
   <TextInput
-    selectionColor={theme.colors.lightGreen}
-    style={{ fontSize: theme.fontSizes[3] }}
+    selectionColor={props.theme.colors.lightGreen}
+    style={{ fontSize: props.theme.fontSizes[3] }}
     {...props}
   />
 );
