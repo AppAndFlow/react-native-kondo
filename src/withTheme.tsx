@@ -10,7 +10,7 @@ export interface ThemeInjectedProps {
 
 function withTheme<OuterProps>(
   WrappedComponent: React.ComponentType<OuterProps & ThemeInjectedProps>,
-): React.ComponentClass<OuterProps> {
+): React.ComponentType<OuterProps> {
   const WithThemeComponent = ({ forwardedRef, ...props }: any) => {
     const theme = useTheme();
 
