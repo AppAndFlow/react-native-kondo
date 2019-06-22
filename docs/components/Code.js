@@ -4,6 +4,7 @@ const Code = props => (
   <div>
     <div className="code-container">
       <pre>
+        {/* eslint-disable-next-line react/prop-types */}
         <code>{props.children}</code>
       </pre>
     </div>

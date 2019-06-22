@@ -5,6 +5,7 @@ import Sidebar from './Sidebar';
 const Layout = props => (
   <div className="layout">
     <Sidebar />
+    {/* eslint-disable-next-line react/prop-types */}
     <div className="content">{props.children}</div>
     <style jsx global>{`
       @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');

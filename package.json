@@ -8,12 +8,12 @@
   ],
   "scripts": {
     "build": "tsc",
-    "next:dev": "next docs",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "next:build": "next build docs",
+    "next:dev": "next docs",
     "next:export": "next export docs",
     "next:start": "next start docs",
-    "lint": "eslint 'src/**/*'",
-    "prettier": "prettier --write 'src/**/*'"
+    "prettier": "prettier --write '**/*'"
   },
   "repository": {
     "type": "git",
