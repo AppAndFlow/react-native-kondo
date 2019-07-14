@@ -3,6 +3,7 @@
 .gitignore
 .next
 .prettierignore
+static
 assets
 dist
 LICENSE
