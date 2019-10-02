@@ -135,7 +135,7 @@ const App = () => (
     </Code>
     <p>
       If you need to access your theme outside of react-native-kondo components,
-      you can use the <code>useTheme</code> hook.
+      you can use the <code id="useTheme">useTheme</code> hook.
     </p>
     <Code>
       {`import React from 'react';
@@ -155,8 +155,8 @@ const Input = props => {
 }`}
     </Code>
     <p>
-      Alternatively, there is the <code>withTheme</code> higher-order component
-      (HOC).
+      Alternatively, there is the <code id="withTheme">withTheme</code>{' '}
+      higher-order component (HOC).
     </p>
     <Code>
       {`import React from 'react';

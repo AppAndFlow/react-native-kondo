@@ -26,6 +26,12 @@ const Sidebar = () => (
       <Link href="/touchable">
         <a>Touchable</a>
       </Link>
+      <Link href="/#useTheme">
+        <a>useTheme</a>
+      </Link>
+      <Link href="/#withTheme">
+        <a>withTheme</a>
+      </Link>
       <span>&nbsp;</span>
       <Link href="/touchable">
         <a
