@@ -26,6 +26,16 @@ const Sidebar = () => (
       <Link href="/touchable">
         <a>Touchable</a>
       </Link>
+      <span>&nbsp;</span>
+      <Link href="/touchable">
+        <a
+          href="https://github.com/AppAndFlow/react-native-kondo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </Link>
     </div>
     <style jsx>{`
       .sidebar {
