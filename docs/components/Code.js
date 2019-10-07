@@ -13,7 +13,6 @@ const Code = props => (
         padding: 1rem;
         border: 1px solid black;
         background: rgba(238, 236, 137, 0.2);
-        overflow-x: scroll;
         overflow-y: hidden;
         white-space: nowrap;
       }
