@@ -4,7 +4,7 @@
 
 React Native primitives and utilities for design systems.
 
-`react-native-kondo` streamlines the development of apps built around design systems. Notably, this library helps with **building user interfaces that follows a set of constraints** to maximize consistency and aims to **increase developers velocity**. It achieves this by providing a set of React Native primitives (components) that are tightly coupled to a user defined theme. Theme values and scales are accessed via intuitive props on said components. It shares similarities with inline styling but with the addition that it accesses your theme via Context. Lastly, it allows interaction with your theme outside of the provided components through utilities (e.g. hook & HOC) for flexibility. `react-native-kondo` draws a lot of inspiration from [Rebass](https://github.com/jxnblk/rebass).
+Draws a lot of inspiration from [Rebass](https://github.com/jxnblk/rebass).
 
 ## Installation
 
