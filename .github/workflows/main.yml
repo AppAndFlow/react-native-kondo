@@ -1,11 +1,13 @@
-name: main
+name: CI
 on: push
 jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: npm ci
-      run: npm ci
-    - name: lint
-      run: npm run lint
+      - uses: actions/checkout@v1
+      - name: install
+        run: npm ci
+      - name: lint
+        run: npm run lint
+      - name: tsc
+        run: npm run tsc

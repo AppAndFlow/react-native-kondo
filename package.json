@@ -14,7 +14,8 @@
     "next:dev": "next docs",
     "next:export": "next export docs",
     "next:start": "next start docs",
-    "prettier": "prettier --write '**/*'"
+    "prettier": "prettier --write '**/*'",
+    "tsc": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
