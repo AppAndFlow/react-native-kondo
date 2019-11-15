@@ -35,25 +35,26 @@
   "homepage": "https://github.com/AppAndFlow/react-native-kondo#readme",
   "devDependencies": {
     "@types/hoist-non-react-statics": "^3.3.1",
-    "@types/node": "^12.6.2",
-    "@types/react": "^16.8.23",
-    "@types/react-native": "^0.60.0",
-    "@typescript-eslint/eslint-plugin": "^1.12.0",
-    "@typescript-eslint/parser": "^1.12.0",
-    "eslint": "^6.0.1",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-react": "^7.14.2",
+    "@types/node": "^12.12.8",
+    "@types/react": "^16.9.11",
+    "@types/react-native": "^0.60.22",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.7.0",
+    "eslint": "^6.6.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
     "next": "^9.0.1",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "typescript": "^3.5.3"
+    "typescript": "^3.7.2"
   },
   "peerDependencies": {
     "react": "^16.8.0",
     "react-native": "^0.59.0"
   },
   "dependencies": {
-    "hoist-non-react-statics": "^3.3.0"
+    "hoist-non-react-statics": "^3.3.1"
   }
 }
