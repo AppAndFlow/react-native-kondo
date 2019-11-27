@@ -14,6 +14,7 @@ export interface TextProps extends ReactNativeTextProps {
   color?: string;
   fontFamily?: string;
   fontSize?: number;
+  fontWeight?: TextStyle['fontWeight'];
   letterSpacing?: number;
   lineHeight?: number;
   m?: number;
@@ -35,7 +36,7 @@ export interface TextProps extends ReactNativeTextProps {
 
 function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
   const style: TextStyle = {};
-  const { textAlign } = props;
+  const { textAlign, fontWeight } = props;
 
   if (props.color != undefined) {
     style.color = theme.colors[props.color] || props.color;
@@ -121,6 +122,7 @@ function getStyleSheetFromTextProps(props: TextProps, theme: Theme) {
   return StyleSheet.create({
     text: {
       ...style,
+      fontWeight,
       textAlign,
     },
   });

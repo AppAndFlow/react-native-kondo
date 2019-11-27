@@ -36,6 +36,10 @@ const Text = () => (
         used as size)
       </li>
       <li>
+        <code>fontWeight?: </code>
+        {`TextStyle['textAlign']`}
+      </li>
+      <li>
         <code>letterSpacing?: </code>
         number (index from your space array, if negative or higher, it will be
         used as spacing)
