@@ -1,9 +1,10 @@
 import React from 'react';
 
+import Layout from '../components/Layout';
 import Code from '../components/Code';
 
 const Box = () => (
-  <div>
+  <Layout>
     <h1>Box</h1>
     <p>
       Box renders a React Native <code>View</code> component.
@@ -126,7 +127,7 @@ const Box = () => (
       </li>
       <code>Any View props</code>
     </ul>
-  </div>
+  </Layout>
 );
 
 export default Box;

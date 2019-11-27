@@ -1,9 +1,10 @@
 import React from 'react';
 
+import Layout from '../components/Layout';
 import Code from '../components/Code';
 
 const Index = () => (
-  <div>
+  <Layout>
     <img
       src="https://raw.githubusercontent.com/AppAndFlow/react-native-kondo/master/assets/logo.png"
       alt="react-native-kondo logo"
@@ -182,7 +183,7 @@ export default withTheme(Input);
         }
       `}
     </style>
-  </div>
+  </Layout>
 );
 
 export default Index;

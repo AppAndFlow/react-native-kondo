@@ -8,7 +8,7 @@ const Layout = props => (
     {/* eslint-disable-next-line react/prop-types */}
     <div className="content">{props.children}</div>
     <style jsx global>{`
-      @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+      @import url('https://fonts.googleapis.com/css?family=Fira+Code');
 
       html {
         box-sizing: border-box;
@@ -20,12 +20,14 @@ const Layout = props => (
         box-sizing: inherit;
       }
 
+      * {
+        font-family: 'Fira Code', monospace;
+      }
+
       body {
-        font-family: 'Inconsolata', monospace;
-        font-size: 16px;
-        margin: 0;
-        background: rgb(254, 253, 236);
         line-height: 1.6;
+        background: rgb(254, 253, 236);
+        margin: 0;
       }
 
       li {
@@ -46,7 +48,6 @@ const Layout = props => (
       }
 
       code {
-        font-family: 'Inconsolata', monospace;
         font-weight: 700;
       }
 

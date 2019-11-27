@@ -1,9 +1,10 @@
 import React from 'react';
 
+import Layout from '../components/Layout';
 import Code from '../components/Code';
 
 const Text = () => (
-  <div>
+  <Layout>
     <h1>Text</h1>
     <p>
       Text renders a React Native <code>Text</code> component.
@@ -127,7 +128,7 @@ const Text = () => (
         <code>Any Text props</code>
       </li>
     </ul>
-  </div>
+  </Layout>
 );
 
 export default Text;

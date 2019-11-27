@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 
+import Layout from '../components/Layout';
 import Code from '../components/Code';
 
 const Touchable = () => (
-  <div>
+  <Layout>
     <h1>Touchable</h1>
     <p>
       Touchable renders a React Native <code>TouchableHighlight</code>,{' '}
@@ -52,7 +53,7 @@ const Touchable = () => (
         </code>
       </li>
     </ul>
-  </div>
+  </Layout>
 );
 
 export default Touchable;
