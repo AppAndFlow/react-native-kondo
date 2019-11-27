@@ -38,7 +38,7 @@ const Text = () => (
       </li>
       <li>
         <code>fontWeight?: </code>
-        {`TextStyle['textAlign']`}
+        {`TextStyle['fontWeight']`}
       </li>
       <li>
         <code>letterSpacing?: </code>
