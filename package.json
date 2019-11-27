@@ -1,6 +1,6 @@
 {
   "name": "react-native-kondo",
-  "version": "2.0.7",
+  "version": "2.1.0",
   "description": "React Native primitives and utilities for design systems",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
