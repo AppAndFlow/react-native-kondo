@@ -35,6 +35,15 @@ const Box = () => (
         <code>flexDirection?: </code>
         {`ViewStyle['flexDirection']`}
       </li>
+
+      <li>
+        <code>flexGrow?: </code>
+        number
+      </li>
+      <li>
+        <code>flexShrink?: </code>
+        number
+      </li>
       <li>
         <code>flexWrap?: </code>
         {`ViewStyle['flexWrap']`}

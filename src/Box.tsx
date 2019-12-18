@@ -12,6 +12,8 @@ export interface BoxProps extends ViewProps {
   children?: React.ReactNode;
   flex?: number;
   flexDirection?: ViewStyle['flexDirection'];
+  flexGrow?: number;
+  flexShrink?: number;
   flexWrap?: ViewStyle['flexWrap'];
   height?: number;
   justifyContent?: ViewStyle['justifyContent'];
@@ -39,6 +41,9 @@ export function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
     alignSelf,
     flex,
     flexDirection,
+    flexGrow,
+    flexShrink,
+    flexWrap,
     height,
     justifyContent,
     width,
@@ -130,6 +135,9 @@ export function getStyleSheetFromBoxProps(props: BoxProps, theme: Theme) {
       alignSelf,
       flex,
       flexDirection,
+      flexGrow,
+      flexShrink,
+      flexWrap,
       height,
       justifyContent,
       width,
